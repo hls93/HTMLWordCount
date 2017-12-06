@@ -47,7 +47,8 @@ public class Main {
 
                 }
                 //now sorting the list by frequency and limiting it to print the top 25
-                map.entrySet()
+                map
+                        .entrySet()
                         .stream()
                         .sorted(Collections.reverseOrder(Map.Entry.comparingByValue()))
                         .limit(25)
@@ -56,8 +57,7 @@ public class Main {
             } catch (IllegalArgumentException e) {
                 System.out.println("Url is not valid. Please try again");
             }
-        }
-        while(!isValid);
+        } while (!isValid);
         return;
 
     }
