@@ -9,8 +9,11 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        //using Jsoup, I am connecting to the url and parsing through the html
-        String webPage = "https://www.thespruce.com/flowers-that-attract-monarch-butterflies-3882326";
+        Scanner scanner = new Scanner(System.in);
+
+        //using Jsoup, I am connecting to the url and parsing through the html after asking for user input
+        System.out.println("Please enter a URL");
+        String webPage = scanner.nextLine();
 
         String html = Jsoup.connect(webPage).get().html();
 
@@ -19,13 +22,14 @@ public class Main {
         //extracting the text from the body of the web-page
         String text = doc.body().text();
 
-        //creating a new list to show the words on the web-page and their frequency
+        //creating a new list to show the words on the web-page and sorting it
         List<String> list = Arrays.asList(text.split(" "));
         Collections.sort(list);
 
         //creating a hashMap to store the word and its frequency
         HashMap<String, Integer> map = new HashMap<>();
 
+        //looping over the list. If the word is found multiple times (contains key) we are adding 1 to the value of count, then adding it to the map. If not, count equals one.
         for (int i = 0; i < list.size(); i++) {
             String s = list.get(i).toLowerCase();
             int count;
