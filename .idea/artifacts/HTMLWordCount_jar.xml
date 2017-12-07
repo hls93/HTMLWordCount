@@ -1,5 +1,5 @@
 <component name="ArtifactManager">
-  <artifact type="jar" build-on-make="true" name="HTMLWordCount:jar">
+  <artifact type="jar" name="HTMLWordCount:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/HTMLWordCount_jar</output-path>
     <root id="archive" name="HTMLWordCount.jar">
       <element id="module-output" name="HTMLWordCount" />
